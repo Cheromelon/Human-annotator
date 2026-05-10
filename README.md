@@ -203,14 +203,44 @@ scipy
 requests
 ```
 
-Install dependencies:
+## Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+```
+
+### 2. Install Dependencies
 
 ```bash
 pip install tensorflow numpy pandas matplotlib seaborn scikit-learn scipy
 ```
 
----
+### 3. Launch the Notebook
 
+```bash
+jupyter notebook human_annotator_project.ipynb
+```
+
+Or if you prefer JupyterLab:
+
+```bash
+jupyter lab human_annotator_project.ipynb
+```
+
+### 4. Run the Cells
+
+Run all cells in order from top to bottom. The notebook will:
+
+- Automatically download the CIFAR-10 dataset via `tensorflow.keras.datasets`
+- Automatically download the CIFAR-10H soft label file from GitHub
+- Train both models through pretraining and fine-tuning phases
+- Save model weights to disk after each experiment
+- Generate all evaluation plots inline
+
+> Note: Training all six fine-tuning experiments (2 models x 3 loss functions, up to 50 epochs each) can take a significant amount of time on CPU. A GPU is strongly recommended. If you are using Google Colab, go to Runtime > Change runtime type > GPU before running.
 ## Key Concepts
 
 **Soft Labels** — probability distributions over classes rather than a single hard class assignment. They encode annotator disagreement and are a richer supervision signal than one-hot labels.
